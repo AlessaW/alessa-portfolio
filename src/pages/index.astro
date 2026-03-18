@@ -1,0 +1,52 @@
+---
+import CardsLayout from "../layouts/CardsLayout.astro"
+import CardComponent from "../components/shared/CardComponent.astro";
+import LinkComponent from "../components/shared/LinkComponent.astro"
+import ButtonComponent from "../components/shared/ButtonComponent.astro";
+import TagsComponent from "../components/shared/TagsComponent.astro";
+import FooterComponent from "../components/shared/FooterComponent.astro";
+---
+
+<CardsLayout title="Homepage">
+    
+    <CardComponent heading="fairy-strategy">
+        <TagsComponent tags={["Game Maker","Game Maker Language", "Clip Studio Paint", "Affinity Designer"]}/>
+        <p class="my-3">
+            A round-based-2D-strategy game
+        </p>
+        <p class="my-3">
+            Lead Designer & Lead Artist & Developer
+        </p>
+
+
+        <ButtonComponent location={new URL("https://hdm-stuttgart.de/mediathek/projectpage/4285/details")} label="HdM Page" />
+    </CardComponent>
+
+    <CardComponent heading="Project Mothership">
+        <TagsComponent tags={["Godot", "Blender"]}/>
+        <p class="my-3">
+            A cooperative Action-Adventure game
+        </p>
+        <p class="my-3">
+            Level Designer
+        </p>
+        <ButtonComponent location={new URL("https://hdm-stuttgart.de/mediathek/projectpage/4572/details")} label="HdM Page" />
+    </CardComponent>
+
+    <CardComponent heading="Bachelor Thesis">
+        <TagsComponent tags={["Blender"]}/>
+        <p class="my-3">
+            World Building in Architecture
+        </p>
+        <p class="my-3">
+            How can the architectural theory of shape, colour and
+            composition be applied to create a building in a fantasy
+            world that conveys its own backstory?
+        </p>
+
+        <ButtonComponent location={new URL("./Bachelor-Thesis-Alessa-Wiesner.pdf", Astro.url.origin)} label="PDF"/>
+    </CardComponent>
+
+</CardsLayout>
+
+<FooterComponent></FooterComponent>

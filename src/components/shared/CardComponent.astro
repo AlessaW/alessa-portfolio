@@ -1,0 +1,13 @@
+---
+interface Props{
+    heading?: string
+}
+
+const { heading } : Props = Astro.props;
+---
+
+<div class="p-8 bg-secondary text-secondary-content shadow-[6px_6px_0_0] rounded-sm min-h-min overflow-hidden">
+    { heading && <h3 class="text-xl lg:text-3xl mb-3">{heading}</h3> }
+
+    <slot />
+</div>

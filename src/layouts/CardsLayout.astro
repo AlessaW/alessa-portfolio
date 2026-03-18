@@ -1,0 +1,20 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } : Props = Astro.props;
+
+import Root from "./root.astro"
+---
+
+<Root title={title}>
+    <main class="container mx-auto p-8 px-20">
+        <section class=" bg--color-secondary/75">
+            <h1 class="text-3xl lg:text-5xl font-bold mb-12">{title}</h1>
+        </section>
+        <section class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-4">
+            <slot />
+        </section>
+    </main>
+</Root>

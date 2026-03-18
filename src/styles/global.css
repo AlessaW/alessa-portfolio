@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #283E2F;
+    --color-primary-content: white;
+    --color-secondary: #9AC695;
+    --color-secondary-content: black;
+    --color-neutral: #411F11;
+    --color-neutral-content: white;
+}
+
+@layer utilities {
+    .main-pattern {
+        @apply bg-blend-overlay bg-cover h-screen w-screen;
+    
+        background-color: #411F11;
+        /* background-image: linear-gradient(0deg, #512715 50%, #411F11 50%); */
+        background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 15px ), repeating-linear-gradient( #593b32, #411F11 );
+
+    }
+
+    .circle-pattern {
+        --s: 250px; /* control the size*/
+        --c1: #b6774e;
+        --c2: #8a5335;
+
+        --_g:
+                var(--c1) 0%  5% ,var(--c2) 6%  15%,var(--c1) 16% 25%,var(--c2) 26% 35%,var(--c1) 36% 45%,
+                var(--c2) 46% 55%,var(--c1) 56% 65%,var(--c2) 66% 75%,var(--c1) 76% 85%,var(--c2) 86% 95%,
+                #0000 96%;
+        background:
+                radial-gradient(50% 50% at 100% 0,var(--_g)),
+                radial-gradient(50% 50% at 0 100%,var(--_g)),
+                radial-gradient(50% 50%,var(--_g)),
+                radial-gradient(50% 50%,var(--_g)) calc(var(--s)/2) calc(var(--s)/2)
+                var(--c1);
+        background-size: var(--s) var(--s);
+    }
+}
